@@ -211,6 +211,7 @@ class FlutterPlugin implements Plugin<Project> {
         project.rootProject.allprojects {
             repositories {
                 maven {
+                    allowInsecureProtocol = true
                     url repository
                 }
             }

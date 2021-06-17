@@ -600,6 +600,7 @@ ${terminal.bolden('Consuming the Module')}
             url '${repoDirectory.path}'
         }
         maven {
+            allowInsecureProtocol = true
             url 'http://download.flutter.io'
         }
       }
