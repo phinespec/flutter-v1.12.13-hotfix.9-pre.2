@@ -728,14 +728,20 @@ class FlutterExtension {
 }
 
 abstract class BaseFlutterTask extends DefaultTask {
+    @Internal
     File flutterRoot
+    @Internal
     File flutterExecutable
+    @Input
     String buildMode
+    @Internal
     String localEngine
+    @Internal
     String localEngineSrcPath
     @Input
     String targetPath
     @Optional
+    @Internal
     Boolean verbose
     @Optional @Input
     String[] fileSystemRoots
@@ -745,7 +751,9 @@ abstract class BaseFlutterTask extends DefaultTask {
     Boolean trackWidgetCreation
     @Optional @Input
     List<String> targetPlatformValues
+    @Internal
     File sourceDir
+    @Internal
     File intermediateDir
     @Optional @Input
     String extraFrontEndOptions
@@ -813,6 +821,7 @@ class FlutterTask extends BaseFlutterTask {
         return intermediateDir
     }
 
+    @Internal
     CopySpec getAssets() {
         return project.copySpec {
             from "${intermediateDir}"
@@ -820,6 +829,7 @@ class FlutterTask extends BaseFlutterTask {
         }
     }
 
+    @Internal
     CopySpec getSnapshots() {
         return project.copySpec {
             from "${intermediateDir}"
